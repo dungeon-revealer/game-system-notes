@@ -1,0 +1,12 @@
+---
+notes:
+  # game:
+  #   document:
+  #     name: Nice Document Name
+  #     path: path/to/folder
+  #     zip: game-document.zip
+  dnd:
+    5e-srd:
+      name: 5e SRD
+      path: notes/Dungeons and Dragons/5e-SRD
+      zip: dnd-5e-srd.zip

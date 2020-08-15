@@ -1,0 +1,24 @@
+name: Build Docker
+
+on:
+  push:
+    branches: [ master ]
+
+
+jobs:
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Login to DockerHub Registry
+        run: echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
+
+      - name: Build Docker
+        run: |
+          cd validator
+          docker build -t ${{ secrets.DOCKER_REPO }} .
+          docker push ${{ secrets.DOCKER_REPO }}

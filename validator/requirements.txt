@@ -1,0 +1,2 @@
+-e git+https://github.com/jonbeebe/frontmatter.git#egg=accd644b15a5ac7adaab261655eb552065020821
+validators==0.17.1

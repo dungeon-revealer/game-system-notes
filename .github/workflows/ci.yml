@@ -1,0 +1,30 @@
+name: Notes CI
+
+on:
+  push:
+  pull_request:
+    branches: [master]
+
+jobs:
+
+  job:
+    name: Validate Notes
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Validate Notes
+        run: |
+          set -x
+          yq() {
+          docker run --rm -i -v "${PWD}":/workdir mikefarah/yq yq "$@"
+          }
+          yq v documents.yml # Validate documents.yml
+          for foo in $(yq r --printMode p documents.yml notes.*.*)
+          do
+            export SRC=$(yq r documents.yml $foo.path)
+            echo "Checking $SRC"
+            (cd "$SRC" && docker run --rm -v "$PWD:/data" ${{ secrets.DOCKER_REPO }}:latest) # Validate folder
+            echo "#################################"
+          done
