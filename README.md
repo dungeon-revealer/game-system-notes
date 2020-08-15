@@ -12,7 +12,7 @@ A repository of notes ready to import into [dungeon-revealer](https://github.com
 
 Pull requests are welcome! We will only accept content released under permissive licenses such as OGL, CC, etc.
 
-1. Clone this repository: `git clone https://github.com/maxb2/game-system-notes.git`
+1. Clone this repository: `git clone https://github.com/dungeon-revealer/game-system-notes.git`
 2. Add your document files in an appropriate folder. For example: `notes/game/document/`.
   - Make sure the files you add have [appropriate headers](https://github.com/dungeon-revealer/dungeon-revealer/wiki/Notes#importing-notes) for dungeon-revealer.
   - You must also include the license of your document.
@@ -31,7 +31,7 @@ Pull requests are welcome! We will only accept content released under permissive
 - [Dungeons and Dragons](notes/Dungeons%20and%20Dragons)
   - [5e SRD][dnd-5e-srd]
 
-[dnd-5e-srd]: https://github.com/maxb2/game-system-notes/releases/download/v0.1.0/dnd-5e-srd.zip
+[dnd-5e-srd]: https://github.com/dungeon-revealer/game-system-notes/releases/download/v0.1.0/dnd-5e-srd.zip
 ```
 5. Submit a pull request.
 
@@ -42,4 +42,4 @@ Pull requests are welcome! We will only accept content released under permissive
 - [ ] Automatically generate the link tree in the README.
 - [ ] Add more [SRDs](https://www.dicegeeks.com/rpg-srds/).
 
-[dnd-5e-srd]: https://github.com/maxb2/game-system-notes/releases/download/v0.1.0/dnd-5e-srd.zip
+[dnd-5e-srd]: https://github.com/dungeon-revealer/game-system-notes/releases/download/v0.1.0/dnd-5e-srd.zip
