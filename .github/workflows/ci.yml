@@ -25,6 +25,6 @@ jobs:
           do
             export SRC=$(yq r documents.yml $foo.path)
             echo "Checking $SRC"
-            (cd "$SRC" && docker run --rm -v "$PWD:/data" ${{ secrets.DOCKER_REPO }}:latest) # Validate folder
+            (cd "$SRC" && docker run --rm -v "$PWD:/data" dungeonrevealer/notes-validator:latest) # Validate folder
             echo "#################################"
           done
