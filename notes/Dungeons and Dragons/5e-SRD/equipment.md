@@ -1,7 +1,6 @@
 ---
 id: dnd-5e-srd-equipment
 title: Equipment
-tags: [ dnd-5e-srd ]
 is_entry_point: false
 ---
 
