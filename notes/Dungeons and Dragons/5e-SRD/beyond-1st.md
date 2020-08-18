@@ -1,7 +1,6 @@
 ---
 id: dnd-5e-srd-beyond-1st
 title: Beyond 1st Level
-tags: [ dnd-5e-srd ]
 is_entry_point: false
 ---
 
