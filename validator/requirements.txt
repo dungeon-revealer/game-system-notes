@@ -1,2 +1,5 @@
--e git+https://github.com/jonbeebe/frontmatter.git#egg=accd644b15a5ac7adaab261655eb552065020821
-validators==0.17.1
+decorator==4.4.2
+-e git+https://github.com/jonbeebe/frontmatter.git@accd644b15a5ac7adaab261655eb552065020821#egg=frontmatter
+PyYAML==5.1
+six==1.15.0
+validators==0.18.2
