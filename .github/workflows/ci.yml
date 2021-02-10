@@ -21,10 +21,7 @@ jobs:
           docker run --rm -i -v "${PWD}":/workdir mikefarah/yq:latest "$@"
           }
           yq e 'true' documents.yml # Validate documents.yml
-<<<<<<< HEAD
           IFS=$(echo -en "\n\b") # Handle spaces correctly
-=======
->>>>>>> fix: upgrade yq to v4
           for SRC in $(yq e '.notes.*.*.path' documents.yml)
           do
             echo "Checking $SRC"
