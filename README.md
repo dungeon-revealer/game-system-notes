@@ -45,4 +45,4 @@ Pull requests are welcome! We will only accept content released under permissive
 - [ ] Add more [SRDs](https://www.dicegeeks.com/rpg-srds/).
 
 [dnd-5e-srd]: https://github.com/dungeon-revealer/game-system-notes/releases/download/v0.2.0/dnd-5e-srd.zip
-[dungeon-revealer-wiki]: https://github.com/dungeon-revealer/game-system-notes/releases/download/v0.2.0/dungeon-revealer-wiki.zip.zip
+[dungeon-revealer-wiki]: https://github.com/dungeon-revealer/game-system-notes/releases/download/v0.2.0/dungeon-revealer-wiki.zip
