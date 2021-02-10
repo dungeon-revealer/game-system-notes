@@ -18,12 +18,12 @@ jobs:
         run: |
           set -x
           yq() {
-          docker run --rm -i -v "${PWD}":/workdir mikefarah/yq yq "$@"
+          docker run --rm -i -v "${PWD}":/workdir mikefarah/yq:latest "$@"
           }
-          yq v documents.yml # Validate documents.yml
-          for foo in $(yq r --printMode p documents.yml notes.*.*)
+          yq e 'true' documents.yml # Validate documents.yml
+          IFS=$(echo -en "\n\b") # Handle spaces correctly
+          for SRC in $(yq e '.notes.*.*.path' documents.yml)
           do
-            export SRC=$(yq r documents.yml $foo.path)
             echo "Checking $SRC"
             (cd "$SRC" && docker run --rm -v "$PWD:/data" dungeonrevealer/notes-validator:latest) # Validate folder
             echo "#################################"
