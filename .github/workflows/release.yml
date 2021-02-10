@@ -18,13 +18,13 @@ jobs:
         run: |
           set -x
           yq() {
-          docker run --rm -i -v "${PWD}":/workdir mikefarah/yq yq "$@"
+          docker run --rm -i -v "${PWD}":/workdir mikefarah/yq:latest "$@"
           }
           mkdir -p zip
-          for foo in $(yq r --printMode p documents.yml notes.*.*)
+          for foo in $(yq e '.notes.*.* | path | join(".")' documents.yml) # enumerate yaml paths
           do
-            export SRC=$(yq r documents.yml $foo.path)
-            export DEST="$PWD/zip/$(yq r documents.yml $foo.zip)"
+            export SRC=$(yq e ".$foo.path" documents.yml)
+            export DEST="$PWD/zip/$(yq e ".$foo.zip" documents.yml)"
             (cd "$SRC" && zip -r "$DEST" .)
           done
 
