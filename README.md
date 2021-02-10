@@ -3,9 +3,11 @@
 A repository of notes ready to import into [dungeon-revealer](https://github.com/dungeon-revealer/dungeon-revealer/). The main purpose of this repository is to host system reference documents of role playing games.
 
 
-
+- [Dungeon Revealer](notes/Dungeon%20Revealer/wiki)
+  - [Wiki][dungeon-revealer-wiki]
 - [Dungeons and Dragons](notes/Dungeons%20and%20Dragons)
   - [5e SRD][dnd-5e-srd]
+
 
 
 ## Contributing
@@ -31,7 +33,7 @@ Pull requests are welcome! We will only accept content released under permissive
 - [Dungeons and Dragons](notes/Dungeons%20and%20Dragons)
   - [5e SRD][dnd-5e-srd]
 
-[dnd-5e-srd]: https://github.com/dungeon-revealer/game-system-notes/releases/download/v0.1.0/dnd-5e-srd.zip
+[dnd-5e-srd]: https://github.com/dungeon-revealer/game-system-notes/releases/download/v0.2.0/dnd-5e-srd.zip
 ```
 5. Submit a pull request.
 
@@ -42,4 +44,5 @@ Pull requests are welcome! We will only accept content released under permissive
 - [ ] Automatically generate the link tree in the README.
 - [ ] Add more [SRDs](https://www.dicegeeks.com/rpg-srds/).
 
-[dnd-5e-srd]: https://github.com/dungeon-revealer/game-system-notes/releases/download/v0.1.0/dnd-5e-srd.zip
+[dnd-5e-srd]: https://github.com/dungeon-revealer/game-system-notes/releases/download/v0.2.0/dnd-5e-srd.zip
+[dungeon-revealer-wiki]: https://github.com/dungeon-revealer/game-system-notes/releases/download/v0.2.0/dungeon-revealer-wiki.zip.zip

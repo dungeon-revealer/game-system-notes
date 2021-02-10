@@ -10,3 +10,8 @@ notes:
       name: 5e SRD
       path: notes/Dungeons and Dragons/5e-SRD
       zip: dnd-5e-srd.zip
+  dungeon-revealer:
+    wiki:
+      name: Dungeon Revealer Wiki
+      path: notes/Dungeon Revealer/wiki
+      zip: dungeon-revealer-wiki.zip
