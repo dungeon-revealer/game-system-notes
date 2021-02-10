@@ -2,6 +2,9 @@ name: Build Docker
 
 on:
   push:
+    paths:
+        # Trigger only when wiki directory changes
+        - 'validator/**'
     branches: [ master ]
 
 
