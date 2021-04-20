@@ -1,5 +1,5 @@
-decorator==4.4.2
--e git+https://github.com/jonbeebe/frontmatter.git@accd644b15a5ac7adaab261655eb552065020821#egg=frontmatter
-PyYAML==5.1
+decorator==5.0.7
+python-frontmatter==1.0.0
+PyYAML==5.4.1
 six==1.15.0
 validators==0.18.2
