@@ -1,7 +1,7 @@
 #! /usr/bin/python
 # -*- coding: utf-8 -*-
 import os, sys, glob, re, validators, argparse
-from frontmatter import Frontmatter
+import frontmatter 
 
 # Parse arguments
 parser = argparse.ArgumentParser()
@@ -24,27 +24,33 @@ attr_err_str = "\nError: Invalid Frontmatter\n  Attribute {attr} is {err}\n  Fil
 link_err_str = "\n{err}\n  File: {file}\n  Line: {line}\n  Link: {link}\n"
 id_err_str   = "\nError: {err}\n  id: {id}\n  Files:\n    {f1}\n    {f2}\n"
 
+def render_fmatter(fm):
+    s = ''
+    for k in fm.keys():
+        s += '\n'+f"{k}: {fm[k]}"
+    return s+'\n'
+
 def check_frontmatter(fmatter):
     num_errs = 0
     has_required_attrs = True
-    fm = fmatter['frontmatter'].replace('\n','\n    ')
+    fm = render_fmatter(fmatter).replace('\n','\n    ')
     for x in required_attrs:
-        if x not in fmatter['attributes']: # Check for required attributes
+        if x not in fmatter.keys(): # Check for required attributes
             print(attr_err_str.format(file=fname, attr=x, err="missing", fm=fm))
             has_required_attrs = False
             num_errs += 1
 
     # Skip the rest of checks if missing required attributes
     if has_required_attrs:
-        if not re.match('^[-\w]+$', fmatter['attributes']["id"]): # Check for invalid id string
+        if not re.match('^[-\w]+$', fmatter["id"]): # Check for invalid id string
             print(attr_err_str.format(file=fname, attr="id", err="invalid\n  id must contain only alphanumeric, hyphen(-), or underscore(_)", fm=fm))
             num_errs += 1
 
-        if fmatter['attributes']["title"] is None: # Check for empty attribute
+        if fmatter["title"] is None: # Check for empty attribute
             print(attr_err_str.format(file=fname, attr="title", err="invalid", fm=fm))
             num_errs += 1
 
-        if not isinstance(fmatter['attributes']["is_entry_point"] , bool) : # Check for non-boolean attribute
+        if not isinstance(fmatter["is_entry_point"] , bool) : # Check for non-boolean attribute
             print(attr_err_str.format(file=fname, attr="is_entry_point", err="invalid", fm=fm))
             num_errs += 1
 
@@ -61,11 +67,11 @@ for fname in glob.glob(path + "/**/*", recursive=True): # Find all files and sub
         continue
 
     # Parse file's front matter
-    fmatter = Frontmatter.read_file(fname)
+    fmatter = frontmatter.load(fname)
     err = check_frontmatter(fmatter)
     errs += err
     if err == 0:
-        id = fmatter['attributes']["id"]
+        id = fmatter['id']
         if id in dict: # Check if id already exists
             print(id_err_str.format(err="id already exists", id=id, f1=dict[id]["filename"], f2=fname))
             errs += 1
